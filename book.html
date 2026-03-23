@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Us | Misk Coffee</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=DM+Sans:wght@400;500;700&family=DM+Serif+Display:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">misk</div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="book.html" class="active">Book Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <header class="page-hero">
+        <div class="container">
+            <span class="hero-label">BOOK US</span>
+            <h1>Let's bring Misk to your event.</h1>
+            <p class="hero-subtext">Tell us about your event. We'll bring locally roasted coffee, farm-fresh dairy, and homemade syrups, all prepared by Yazen and Mona.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="page-content">
+        <div class="container">
+            <div class="two-column">
+                <!-- Left Column: Booking Form -->
+                <div class="column-left">
+                    <form class="booking-form" action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="event-type">Event Type</label>
+                            <select id="event-type" name="event-type" required>
+                                <option value="">Select an event type</option>
+                                <option value="corporate">Corporate Event</option>
+                                <option value="wedding">Wedding</option>
+                                <option value="bridal-shower">Bridal Shower</option>
+                                <option value="birthday">Birthday Party</option>
+                                <option value="wellness">Yoga / Wellness</option>
+                                <option value="farmers-market">Farmers Market</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="event-date">Event Date</label>
+                                <input type="date" id="event-date" name="event-date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="guests">Estimated Guests</label>
+                                <input type="number" id="guests" name="guests" min="1" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="location">Event Location</label>
+                            <input type="text" id="location" name="location" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="details">Tell Us More</label>
+                            <textarea id="details" name="details" rows="6" placeholder="Any details about your event. Theme, vibe, special requests..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="margin-bottom: 48px;">Send Inquiry</button>
+                    </form>
+                </div>
+
+                <!-- Right Column: Info Sidebar -->
+                <div class="column-right">
+                    <aside class="info-sidebar">
+                        <h2>What happens next?</h2>
+
+                        <div class="steps">
+                            <div class="step">
+                                <h3>1. We review your inquiry</h3>
+                                <p>Usually within 24 hours.</p>
+                            </div>
+                            <div class="step">
+                                <h3>2. We'll chat details</h3>
+                                <p>Menu, setup, logistics, all tailored to you.</p>
+                            </div>
+                            <div class="step">
+                                <h3>3. You're booked</h3>
+                                <p>We confirm, you relax. We've got it.</p>
+                            </div>
+                        </div>
+
+                        <p class="caveat-note">no event is too small</p>
+
+                        <div class="contact-info">
+                            <p><strong>Email:</strong> <a href="mailto:info@miskcoffee.ca">info@miskcoffee.ca</a></p>
+                            <p><strong>Instagram:</strong> <a href="https://instagram.com/miskcoffee.ca" target="_blank">@miskcoffee.ca</a></p>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Misk Coffee. Proudly serving the GTA.</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="menu.html">Menu</a>
+                <a href="book.html">Book Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <p class="footer-social">
+                <a href="https://instagram.com/miskcoffee.ca" target="_blank">Instagram</a> |
+                <a href="mailto:info@miskcoffee.ca">Email</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Nav Toggle
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        navToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+
+        // Close mobile menu when link is clicked
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+            });
+        });
+
+        // Scroll Nav
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Fade-up Intersection Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('[data-fade]').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
