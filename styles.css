@@ -339,10 +339,12 @@ section, .what-we-do, .event-types, .stats-section,
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(2rem, 5vw, 5rem);
-  align-items: center;
+  align-items: start;
 }
 .what-we-do-image {
-    align-self: center;
+    align-self: start;
+    position: sticky;
+    top: 120px;
 }
 .what-we-do-content p, .origin-text p {
   font-size: 1rem;
